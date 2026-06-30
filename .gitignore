@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Downloaded upstream assets and large generated outputs
+upstream/
+data/raw/
+data/interim/
+results/*/predictions.csv
+results/*/models/
+results/full/
+
+# Local plotting/cache files
+.mplconfig/
+.ipynb_checkpoints/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

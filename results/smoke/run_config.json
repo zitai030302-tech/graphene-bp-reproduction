@@ -1,0 +1,18 @@
+{
+  "feature_file": "/Users/lizitai/Desktop/四电极阻抗/graphene_bp_reproduction/upstream/Data/features/2020-11-05/f2_ma20_mn1_mean_all.csv",
+  "output_dir": "/Users/lizitai/Desktop/四电极阻抗/graphene_bp_reproduction/results/smoke",
+  "training_select": [
+    3
+  ],
+  "subjects": [
+    1
+  ],
+  "feature_select": 0,
+  "seed": 20260521,
+  "n_fold": 10,
+  "row_remove_nan_perc": 0.1,
+  "imputer": "global",
+  "n_jobs": 1,
+  "max_folds": null,
+  "timestamp": "2026-05-21_04-34-49"
+}
