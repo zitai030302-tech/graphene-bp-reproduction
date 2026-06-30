@@ -16,9 +16,9 @@ env/
 upstream/
 data/raw/
 data/interim/
-results/*/predictions.csv
-results/*/models/
 results/full/
+results/repro_*/predictions.csv
+results/*/models/
 
 # Local plotting/cache files
 .mplconfig/
