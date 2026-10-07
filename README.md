@@ -1,5 +1,7 @@
 # Graphene BP Reproduction
 
+[![checks](https://github.com/zitai030302-tech/graphene-bp-reproduction/actions/workflows/checks.yml/badge.svg)](https://github.com/zitai030302-tech/graphene-bp-reproduction/actions/workflows/checks.yml)
+
 Modern feature-level reproduction of a Bio-Z blood-pressure estimation pipeline with AdaBoost regression, protocol-based evaluation, and leakage sensitivity checks.
 
 This project reproduces the feature-level machine learning workflow from the public Graphene_BP codebase while updating the runner for current `pandas` and `scikit-learn` versions. It focuses on experiment design, preprocessing, model evaluation, and reproducibility rather than hardware fabrication or raw-signal processing.
