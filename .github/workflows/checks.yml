@@ -19,6 +19,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
+          cache-dependency-path: requirements-modern.txt
       - name: Install dependencies
         run: pip install -r requirements-modern.txt
       - name: Compile scripts
