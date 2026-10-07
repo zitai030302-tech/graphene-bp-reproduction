@@ -29,3 +29,9 @@ results/*/models/
 Thumbs.db
 .vscode/
 .idea/
+
+
+# Local benchmark data and per-row outputs
+results/model_benchmark/
+results/synthetic_model_benchmark/predictions.csv
+results/synthetic_model_benchmark/split_membership.csv

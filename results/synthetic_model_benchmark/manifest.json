@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "features": [
+    "f0",
+    "f1",
+    "f2",
+    "f3"
+  ],
+  "target": "SBP",
+  "group_column": "subject_id",
+  "protocols": [
+    "random",
+    "group_holdout",
+    "loso"
+  ],
+  "preprocessing": "fold-local imputation; fold-local scaling for ridge",
+  "python": "3.12.14",
+  "sklearn": "1.8.0",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "source_sha256": "b6df0892f79ca258302ae5154c005539e909f456fa93facd3cc240bd134fcb09",
+  "table_sha256": "4ff6a17dd684e4b1e9a9bdf831d209ecc4262299da0a9e0e85859daf18e318f2",
+  "hyperparameters": {
+    "mean": "Pipeline(steps=[('simpleimputer', SimpleImputer(keep_empty_features=True)),\n                ('dummyregressor', DummyRegressor())])",
+    "ridge": "Pipeline(steps=[('simpleimputer', SimpleImputer(keep_empty_features=True)),\n                ('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=1))])",
+    "random_forest": "Pipeline(steps=[('simpleimputer', SimpleImputer(keep_empty_features=True)),\n                ('randomforestregressor',\n                 RandomForestRegressor(min_samples_leaf=3, n_estimators=80,\n                                       n_jobs=1, random_state=42))])",
+    "adaboost": "Pipeline(steps=[('simpleimputer', SimpleImputer(keep_empty_features=True)),\n                ('adaboostregressor',\n                 AdaBoostRegressor(estimator=DecisionTreeRegressor(max_depth=3,\n                                                                   random_state=42),\n                                   n_estimators=60, random_state=42))])"
+  }
+}

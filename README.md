@@ -25,6 +25,25 @@ flowchart LR
     E --> F["Reports and figures"]
 ```
 
+## Subject-generalization benchmark
+
+A separate runner now compares mean prediction, Ridge, random forest, and AdaBoost under random row splits, subject-held-out splits, and leave-one-subject-out evaluation. Imputation is fitted on each training fold; Ridge scaling is also fold-local. Hyperparameters are fixed rather than selected on the held-out predictions.
+
+```bash
+python scripts/benchmark_models.py --synthetic --output /tmp/bioz-benchmark
+python -m unittest discover -s tests -v
+```
+
+For a real feature CSV, specify the target and feature columns explicitly:
+
+```bash
+python scripts/benchmark_models.py --csv features.csv --target SBP --features feature_a,feature_b --group-column subject_id --output results/model_benchmark
+```
+
+The runner saves fold membership and held-out predictions so its metrics can be checked. Target columns and subject identifiers are rejected as features. Random splitting is included as a comparison; it does not demonstrate generalization to unseen subjects or prevent overlap between adjacent signal windows. LOSO addresses subject overlap, not every temporal leakage risk.
+
+The [generated-cohort summary](results/synthetic_model_benchmark/summary.csv) is a software fixture, not a result on the Graphene_BP dataset. The original reproduction workflow and its reported metrics are preserved below.
+
 ## Figures
 
 ![Data pipeline](results/figures/advisor_data_pipeline.png)
@@ -107,4 +126,5 @@ Upstream code and data are not redistributed in this repository. Use `scripts/do
 - The project reproduces feature-level modeling from pre-extracted features.
 - It does not rebuild graphene patch fabrication, analog front-end acquisition, raw impedance demodulation, filtering, peak detection, or clinical validation.
 - The leakage-sensitivity mode is intended for evaluation hygiene, not as a claim that the original research result is invalid.
+
 
